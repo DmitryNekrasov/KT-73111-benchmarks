@@ -46,7 +46,13 @@ benchmark {
 
     configurations {
         named("main") {
-            advanced("jvmForks", 3)
+            advanced("jvmForks", 1)
+            iterations = 10
+            iterationTime = 1
+            iterationTimeUnit = "s"
+            warmups = 20
+            mode = "avgt"
+            outputTimeUnit = "ns"
         }
     }
 }

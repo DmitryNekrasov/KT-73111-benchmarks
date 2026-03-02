@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-    kotlin("multiplatform") version "2.2.20"
+    kotlin("multiplatform")
     id("org.jetbrains.kotlinx.benchmark") version "0.4.14"
 }
 
@@ -9,6 +9,7 @@ group = "org.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 

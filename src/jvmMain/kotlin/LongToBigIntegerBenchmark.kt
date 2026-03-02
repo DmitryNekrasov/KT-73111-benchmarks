@@ -10,12 +10,20 @@ open class LongToBigIntegerBenchmark {
     )
     lateinit var caseId: String
 
-    val value: Long
+    val input: Long
         get() = when (caseId) {
             "lessThenLongMaxValue" -> Long.MAX_VALUE / 2
             "moreThenLongMaxValue" -> Long.MAX_VALUE
             else -> error("Invalid caseId: $caseId")
         }
+
+    private var value: Long = 0L
+
+    @Setup
+    fun setup() {
+        value = input
+        println("Case: $caseId; value = $value")
+    }
 
     @Benchmark
     fun longToBigInteger() = value.toBigInteger()
